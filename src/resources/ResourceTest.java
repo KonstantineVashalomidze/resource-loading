@@ -33,13 +33,16 @@ public class ResourceTest {
         String modifiers = Modifier.toString(cl.getModifiers());
         if (modifiers.length() > 0) System.out.print(modifiers + " ");
         System.out.print("class " + name);
-        if (supercl != null && supercl != Object.class) System.out.print(" extneds " + supercl.getName());
+        if (supercl != null && supercl != Object.class) System.out.print(" extends " + supercl.getName());
 
         System.out.print("\n{\n");
+        System.out.println("----- Constructors -----");
         printConstructors(cl);
         System.out.println();
+        System.out.println("----- Methods -----");
         printMethods(cl);
         System.out.println();
+        System.out.println("----- Fields -----");
         printFields(cl);
         System.out.println("}");
 
